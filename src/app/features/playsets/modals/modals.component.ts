@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-custom-modal',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modals.component.css']
 })
 export class ModalsComponent implements OnInit {
+  pageTitle: string;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe((dataObject) => {
+      this.pageTitle = dataObject.pageTitle;
+    });
   }
-
 }
