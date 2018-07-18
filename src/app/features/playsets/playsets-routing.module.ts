@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ModalsComponent } from './modals/modals.component';
 import { WysiwygComponent } from './wysiwyg/wysiwyg.component';
+import { FileuploaderComponent } from './fileuploader/fileuploader.component';
 
 const playsetsRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ const playsetsRoutes: Routes = [
     path: 'wysiwyg',
     component: WysiwygComponent,
     data: { pageTitle: 'Welcome to the Wysiwyg!' }
+  },
+  {
+    path: 'fileuploader',
+    component: FileuploaderComponent,
+    data: { pageTitle: 'Welcome to the FileUploader!' }
   },
 ];
 
