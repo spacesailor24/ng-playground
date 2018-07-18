@@ -2,7 +2,9 @@
   <button
     class="button is-info is-outlined"
     type="button"
-    (click)="openModal()">
+    (click)="showDialog()">
     Click to launch a modal!
   </button>
+
+  <app-modal [display]="display" (displayChange)="onDialogClose($event)"></app-modal>
 </app-hero-header>

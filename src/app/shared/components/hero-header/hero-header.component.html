@@ -5,9 +5,7 @@
 
   <div class="hero-body">
     <div class="container is-fullwidth has-text-centered">
-      <h1 class="title">
-        {{ pageTitle }}
-      </h1>
+      <h1 [innerHTML]="pageTitle" class="title"></h1>
 
       <ng-content class="subtitle"></ng-content>
     </div>
@@ -18,7 +16,13 @@
       <div class="container">
         <ul>
           <li>
-            <a routerLink="/modals" [routerLinkActive]="['has-background-white', 'has-text-black']">Modals</a>
+            <a routerLink="/welcome" [routerLinkActive]="['has-background-white', 'has-text-black']">Home</a>
+          </li>
+          <li>
+            <a routerLink="/playsets/modals" [routerLinkActive]="['has-background-white', 'has-text-black']">Modals</a>
+          </li>
+          <li>
+            <a routerLink="/playsets/wysiwyg" [routerLinkActive]="['has-background-white', 'has-text-black']">Wysiwyg</a>
           </li>
         </ul>
       </div>

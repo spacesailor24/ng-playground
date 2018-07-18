@@ -1,17 +1,16 @@
-<h2 mat-dialog-title>Beep Boop, Modal Appeared</h2>
+<p-dialog
+  [(visible)]="display"
+  modal="modal"
+  [responsive]="true"
+  [dismissableMask]="true"
+  [showHeader]="false"
+  minWidth="600"
+  minHeight="0"
+  (onHide)="onClose()">
 
-<mat-dialog-content>
-  <p>This is a modal...like you couldn't tell</p>
-</mat-dialog-content>
+  <div>This is some awesome content!</div>
 
-<mat-dialog-actions>
-  <button
-    mat-button
-    mat-dialog-close
-    class="button is-medium is-pulled-left">This Sucks</button>
-
-  <button
-    mat-button
-    mat-dialog-close
-    class="button is-medium is-pulled-right">It's Pretty Cool</button>
-</mat-dialog-actions>
+  <p-footer class="is-clearfix">
+    <button class="button is-small is-info is-pulled-right" (click)="onClose()">Close</button>
+  </p-footer>
+</p-dialog>

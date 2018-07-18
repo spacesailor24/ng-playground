@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
 import {ActivatedRoute} from '@angular/router';
-import { ModalComponent } from '../../../shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-custom-modal',
@@ -10,8 +8,9 @@ import { ModalComponent } from '../../../shared/components/modal/modal.component
 })
 export class ModalsComponent implements OnInit {
   pageTitle: string;
+  display = false;
 
-  constructor(private activatedRoute: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.data.subscribe((dataObject) => {
@@ -19,7 +18,11 @@ export class ModalsComponent implements OnInit {
     });
   }
 
-  openModal() {
-    this.dialog.open(ModalComponent);
+  showDialog() {
+    this.display = true;
+  }
+
+  onDialogClose(event) {
+    this.display = event;
   }
 }
