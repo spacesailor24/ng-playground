@@ -1,0 +1,6 @@
+<app-hero-header [pageTitle]="(updatedPageTitle !== '' ? updatedPageTitle : pageTitle) | safeHTML">
+  <p-editor
+    [(ngModel)]="text"
+    [style]="{'height':'320px'}"
+    (onTextChange)="wysiwygUpdated($event)"></p-editor>
+</app-hero-header>
