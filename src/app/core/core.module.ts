@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { DialogModule } from 'primeng/dialog';
+
+// Modules
 import { CoreRoutingModule } from './core-routing.module';
-import { SharedModule } from '../shared/shared.module';
 
-import { NavbarComponent } from '../shared/components/navbar/navbar.component';
+// Components
 import { WelcomeComponent } from '../features/welcome/welcome.component';
-import { ModalsComponent } from '../features/playsets/modals/modals.component';
-import { HeroHeaderComponent } from '../shared/components/hero-header/hero-header.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
     WelcomeComponent,
-    ModalsComponent,
-    HeroHeaderComponent,
 ],
   imports: [
     CommonModule,
     CoreRoutingModule,
+    DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ]
 })
