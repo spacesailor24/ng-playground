@@ -1,3 +1,13 @@
 <app-hero-header [pageTitle]="pageTitle">
-
+  <p-fileUpload
+    name="uploads"
+    [customUpload]="true"
+    (uploadHandler)="uploadFiles($event)"
+    [multiple]="true">
+    <ng-template pTemplate="toolbar">
+      <p-progressBar
+        mode="dynamic"
+        [value]="uploadPercent"></p-progressBar>
+    </ng-template>
+  </p-fileUpload>
 </app-hero-header>

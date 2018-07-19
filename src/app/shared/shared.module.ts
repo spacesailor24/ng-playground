@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { environment } from '../../environments/environment';
+
 // Modules
 import { PrimengModule } from './primeng/primeng.module';
 
@@ -11,6 +13,8 @@ import { SafeHTMLPipe } from './pipes/safe-html.pipe';
 import { HeroHeaderComponent } from './components/hero-header/hero-header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,21 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    PrimengModule
+    PrimengModule,
+    AngularFireModule.initializeApp({
+      apiKey: environment.firebaseAPIKey,
+      // authDomain: "<your-auth-domain>",
+      storageBucket: environment.firebaseStorageURL,
+      projectId: environment.firebaseProjectID,
+    }),
+    AngularFireStorageModule
   ],
   exports: [
     NavbarComponent,
     HeroHeaderComponent,
     PrimengModule,
-    SafeHTMLPipe
+    SafeHTMLPipe,
+    AngularFireStorageModule
   ]
 })
 export class SharedModule { }

@@ -3,17 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { DialogModule } from 'primeng/dialog';
 import { EditorModule } from 'primeng/editor';
+import { FileUploadModule, ProgressBarModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [
     CommonModule,
     DialogModule,
-    EditorModule
+    EditorModule,
+    FileUploadModule,
+    ProgressBarModule
   ],
-  declarations: [],
   exports: [
     DialogModule,
-    EditorModule
+    EditorModule,
+    FileUploadModule,
+    ProgressBarModule
   ]
 })
-export class PrimengModule { }
+export class PrimengModule {}
