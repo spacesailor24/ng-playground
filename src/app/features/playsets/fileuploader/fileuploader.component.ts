@@ -28,7 +28,12 @@ export class FileuploaderComponent implements OnInit {
         file.objectURL.changingThisBreaksApplicationSecurity.split('/')[3]
       );
 
-      this.uploadTask = ref.put(file);
+      this.uploadTask = ref.put(file).then((snapshot) => {
+        resolve(snapshot);
+      })
+        .catch((error) => {
+        reject(error);
+      });
 
       this.uploadTask.percentageChanges().subscribe((value) => {
         console.log(this.uploadPercent);
